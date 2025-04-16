@@ -1,0 +1,33 @@
+<body class="bg-gray-50">
+  <div class="max-w-3xl mx-auto px-6 py-8">
+    <h1 class="text-3xl font-bold mb-6">Add a New Property</h1>
+
+    <%= form_with(model: @property, local: true, class: "space-y-4") do |form| %>
+      <div>
+        <%= form.label :name, class: "block text-sm font-medium text-gray-700" %>
+        <%= form.text_field :name, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+      </div>
+
+      <div>
+        <%= form.label :email, class: "block text-sm font-medium text-gray-700" %>
+        <%= form.text_field :email, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+      </div>
+
+      <div>
+        <%= form.label :property_id, class: "block text-sm font-medium text-gray-700" %>
+        <%= form.number_field :property_id, min:0, step:1, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+      </div>
+
+      <div>
+        <%= form.label :bedrooms, class: "block text-sm font-medium text-gray-700" %>
+        <%= form.number_field :bedrooms, min: 0, step: 1, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+      </div>
+
+      <div class="mt-6">
+        <%= form.submit "Add a New Property", class: "bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md" %>
+      </div>
+    <% end %>
+  
+    <%= link_to "← Back to Properties Page", properties_path, class: "text-blue-500 hover:underline inline-block mt-6" %>
+  </div>
+</body>
