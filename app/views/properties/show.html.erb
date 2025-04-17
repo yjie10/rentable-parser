@@ -1,21 +1,19 @@
-<body class="bg-gray-50">
-  <div class="max-w-5xl mx-auto px-6 py-8">
-    <h1 class="text-3xl font-bold mb-6">Property Detail</h1>
+<div class="max-w-5xl mx-auto px-6 py-8">
+  <h1 class="text-gray-700 text-3xl font-bold mb-6">
+    Property Detail
+  </h1>
 
-    <div class="bg-white rounded-xl shadow p-4 border border-gray-200 space-y-2">
-      <p class="text-sm text-gray-500">
-        <strong>Property ID:</strong> <%= @property.property_id %>
-      </p>
-      <p>
-        <strong>Name:</strong> <%= @property.name %>
-      </p>
-      <p>
-        <strong>Email:</strong> <%= @property.email %>
-      </p>
-    </div>
-
-    <div class="mt-6">
-      <%= link_to "← Back to list", properties_path, class: "text-blue-600 hover:underline" %>
-    </div>
+  <div class="bg-white rounded-xl shadow p-4 border border-gray-200 space-y-2">
+    <p class="text-xs text-gray-500 mb-1">
+      <strong>Property ID:</strong> <%= @property.property_id %>
+    </p>
+    <p>
+      <strong>Name:</strong> <%= @property.name %>
+    </p>
+    <p>
+      <strong>Email:</strong> <%= @property.email %>
+    </p>
   </div>
-</body>
+
+  <%= link_to "← Back to list", properties_path, class: "text-red-700 hover:text-red-800 hover:underline transition inline-block mt-6" %>
+</div>
