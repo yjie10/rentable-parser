@@ -15,5 +15,31 @@
     </p>
   </div>
 
-  <%= link_to "← Back to list", properties_path, class: "text-red-700 hover:text-red-800 hover:underline transition inline-block mt-6" %>
+  <div class="flex gap-4 mb-6 mt-8">
+    <button id="show-interior" class="bg-red-100 text-red-700 px-4 py-2 rounded-xl shadow-sm">Interior</button>
+    <button id="show-exterior" class="bg-red-100 text-red-700 px-4 py-2 rounded-xl shadow-sm">Exterior</button>
+  </div>
+
+  <div id="image-gallery" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <% @interior_images.each do |img| %>
+      <img src="<%= img %>" class="gallery-img w-full rounded-lg shadow-md object-cover aspect-video transition-transform hover:scale-105 border border-gray-200" data-type="interior" />
+    <% end %>
+
+    <% @exterior_images.each do |img| %>
+      <img src="<%= img %>" class="gallery-img w-full rounded-lg shadow-md object-cover aspect-video transition-transform hover:scale-105 border border-gray-200 hidden" data-type="exterior" />
+    <% end %>
+  </div>
+  
+
+  <%# <div class="mt-8 flex flex-col sm:flex-row gap-4"> %>
+    <%# -- Begin old image toggle logic -- %>
+    <%# <% if @is_interior %>
+    <%#  <%= link_to "View Exterior Photos", property_path(@property, view: "exterior"), class: "mt-6 inline-block bg-red-100 text-red-700 px-4 py-2 rounded-xl shadow-sm hover:bg-red-200 transition" %>
+    <%# <% else %>
+      <%# <%= link_to "View Interior Photos", property_path(@property, view: "interior"), class: "mt-6 inline-block bg-red-100 text-red-700 px-4 py-2 rounded-xl shadow-sm hover:bg-red-200 transition" %>
+    <%# <% end %>
+    <%# -- End -- %>
+  <%# </div> %>
+    
+  <%= link_to "← Back to list", properties_path, class: "text-red-700 hover:text-red-800 hover:underline inline-block mt-6" %>
 </div>

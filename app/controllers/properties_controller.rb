@@ -8,6 +8,21 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1 or /properties/1.json
   def show
+    @property = Property.find(params[:id])
+
+    @interior_images = [
+      'https://images.rentable.co/125174/72525196/large.jpeg',
+      'https://images.rentable.co/125174/72526105/large.jpeg',
+      'https://images.rentable.co/102207/82056855/large.jpeg', 
+      'https://images.rentable.co/125174/72527744/large.jpeg'
+    ]
+
+    @exterior_images = [
+      'https://images.rentable.co/125174/72525707/large.jpeg',
+      'https://images.rentable.co/102207/82630648/large.jpeg',
+      'https://images.rentable.co/102207/77019634/large.jpeg',
+      'https://images.rentable.co/102207/88573201/large.jpeg'
+    ]
   end
 
   # GET /properties/new

@@ -56,3 +56,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Open AI
+gem "ruby-openai"
+
+# importmap 
+gem "importmap-rails", "~> 2.1"
